@@ -61,10 +61,10 @@ public class Case02 {
 		final WebElement loginButton = webDriver.findElement(By.cssSelector(".btn.btn-primary"));
 
 		loginId.clear();
-		loginId.sendKeys("StudentAA02");
+		loginId.sendKeys("1");
 
 		password.clear();
-		password.sendKeys("StudentAA02");
+		password.sendKeys("111");
 
 		loginButton.click();
 
