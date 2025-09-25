@@ -137,6 +137,9 @@ public class Case05 {
 		keyword.sendKeys("研修");
 		searchButton.click();
 
+		File file1 = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(file1, new File("evidence\\case5_5(1).png"));
+
 		final List<WebElement> list = webDriver.findElements(By.className("sorting_1"));
 
 		for (WebElement element : list) {
@@ -147,8 +150,8 @@ public class Case05 {
 			assertTrue(text.contains("研修"));
 		}
 
-		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case5_5.png"));
+		File file2 = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(file2, new File("evidence\\case5_5(2).png"));
 
 	}
 
