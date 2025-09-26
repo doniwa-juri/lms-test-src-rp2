@@ -139,6 +139,7 @@ public class Case07 {
 		final WebElement textArea = webDriver.findElement(By.name("contentArray[0]"));
 		final WebElement submit = webDriver.findElement(By.cssSelector(".btn.btn-primary"));
 
+		textArea.clear();
 		textArea.sendKeys("日報");
 		submit.click();
 
