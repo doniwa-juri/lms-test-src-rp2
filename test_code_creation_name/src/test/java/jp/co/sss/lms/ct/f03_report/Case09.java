@@ -133,11 +133,42 @@ public class Case09 {
 
 	@Test
 	@Order(5)
-	@DisplayName("テスト05 報告内容を修正して「提出する」ボタンを押下しエラー表示：学習項目が未入力")
+	@DisplayName("テスト05 報告内容を修正して「提出する」ボタンを押下しエラー表示：学習項目が入力されているとき、理解度が未入力")
 	void test05() throws Exception {
-		final WebElement section = webDriver.findElement(By.name("intFieldNameArray[0]"));
+		final WebElement section = webDriver.findElement(By.id("intFieldName_0"));
+		final Select understand = new Select(webDriver.findElement(By.id("intFieldValue_0")));
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 				section);
+		section.clear();
+		section.sendKeys("ITリテラシー");
+		understand.selectByIndex(0);
+
+		final WebElement submit = webDriver.findElement(By.cssSelector(".btn.btn-primary"));
+		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
+				submit);
+		submit.click();
+
+		final WebElement newUnderstand = webDriver.findElement(By.id("intFieldValue_0"));
+		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
+				newUnderstand);
+		assertEquals("form-control errorInput", newUnderstand.getAttribute("class"));
+
+		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(file, new File("evidence\\case9_5.png"));
+
+		final Select select = new Select(newUnderstand);
+		select.selectByIndex(1);
+	}
+
+	@Test
+	@Order(6)
+	@DisplayName("テスト06 不適切な内容で修正して「提出する」ボタンを押下しエラー表示：理解度が入力されているとき学習項目が未入力")
+	void test06() throws Exception {
+		final Select understand = new Select(webDriver.findElement(By.id("intFieldValue_0")));
+		final WebElement section = webDriver.findElement(By.id("intFieldName_0"));
+		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
+				understand);
+		understand.selectByIndex(1);
 		section.clear();
 
 		final WebElement submit = webDriver.findElement(By.cssSelector(".btn.btn-primary"));
@@ -145,49 +176,23 @@ public class Case09 {
 				submit);
 		submit.click();
 
-		final WebElement newSection = webDriver.findElement(By.name("intFieldNameArray[0]"));
+		final WebElement newSection = webDriver.findElement(By.id("intFieldName_0"));
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 				newSection);
 		assertEquals("form-control errorInput", newSection.getAttribute("class"));
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case9_5.png"));
-
-		newSection.sendKeys("ITリテラシー");
-	}
-
-	@Test
-	@Order(6)
-	@DisplayName("テスト06 不適切な内容で修正して「提出する」ボタンを押下しエラー表示：理解度が未入力")
-	void test06() throws Exception {
-		final Select understand = new Select(webDriver.findElement(By.name("intFieldValueArray[0]")));
-		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
-				understand);
-		understand.deselectAll();
-
-		final WebElement submit = webDriver.findElement(By.cssSelector(".btn.btn-primary"));
-		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
-				submit);
-		submit.click();
-
-		final WebElement newUnderstand = webDriver.findElement(By.name("intFieldNameArray[0]"));
-		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
-				newUnderstand);
-		assertEquals("form-control errorInput", newUnderstand.getAttribute("class"));
-
-		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(file, new File("evidence\\case9_6.png"));
 
-		final Select select = new Select(newUnderstand);
-		select.selectByIndex(1);
-
+		newSection.clear();
+		newSection.sendKeys("ITリテラシー");
 	}
 
 	@Test
 	@Order(7)
 	@DisplayName("テスト07 不適切な内容で修正して「提出する」ボタンを押下しエラー表示：目標の達成度が数値以外")
 	void test07() throws Exception {
-		final WebElement achievement = webDriver.findElement(By.name("contentArray[0]"));
+		final WebElement achievement = webDriver.findElement(By.id("content_0"));
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 				achievement);
 		achievement.clear();
@@ -198,7 +203,7 @@ public class Case09 {
 				submit);
 		submit.click();
 
-		final WebElement newAchievement = webDriver.findElement(By.name("contentArray[0]"));
+		final WebElement newAchievement = webDriver.findElement(By.id("content_0"));
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 				newAchievement);
 		assertEquals("form-control errorInput", newAchievement.getAttribute("class"));
@@ -214,7 +219,7 @@ public class Case09 {
 	@Order(8)
 	@DisplayName("テスト08 不適切な内容で修正して「提出する」ボタンを押下しエラー表示：目標の達成度が範囲外")
 	void test08() throws Exception {
-		final WebElement achievement = webDriver.findElement(By.name("contentArray[0]"));
+		final WebElement achievement = webDriver.findElement(By.id("content_0"));
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 				achievement);
 		achievement.clear();
@@ -225,7 +230,7 @@ public class Case09 {
 				submit);
 		submit.click();
 
-		final WebElement newAchievement = webDriver.findElement(By.name("contentArray[0]"));
+		final WebElement newAchievement = webDriver.findElement(By.id("content_0"));
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 				newAchievement);
 		assertEquals("form-control errorInput", newAchievement.getAttribute("class"));
@@ -240,8 +245,8 @@ public class Case09 {
 	@Order(9)
 	@DisplayName("テスト09 不適切な内容で修正して「提出する」ボタンを押下しエラー表示：目標の達成度・所感が未入力")
 	void test09() throws Exception {
-		final WebElement achievement = webDriver.findElement(By.name("contentArray[0]"));
-		final WebElement impression = webDriver.findElement(By.name("contentArray[0]"));
+		final WebElement achievement = webDriver.findElement(By.id("content_0"));
+		final WebElement impression = webDriver.findElement(By.id("content_1"));
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 				achievement);
 		achievement.clear();
@@ -252,8 +257,8 @@ public class Case09 {
 				submit);
 		submit.click();
 
-		final WebElement newAchievement = webDriver.findElement(By.name("contentArray[0]"));
-		final WebElement newImpression = webDriver.findElement(By.name("contentArray[0]"));
+		final WebElement newAchievement = webDriver.findElement(By.id("content_0"));
+		final WebElement newImpression = webDriver.findElement(By.id("content_1"));
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 				newAchievement, newImpression);
 
@@ -271,20 +276,28 @@ public class Case09 {
 	@Order(10)
 	@DisplayName("テスト10 不適切な内容で修正して「提出する」ボタンを押下しエラー表示：所感・一週間の振り返りが2000文字超")
 	void test10() throws Exception {
-		final WebElement impression = webDriver.findElement(By.name("contentArray[0]"));
-		final WebElement reflection = webDriver.findElement(By.name("contentArray[0]"));
+		final WebElement impression = webDriver.findElement(By.id("content_1"));
+		final WebElement reflection = webDriver.findElement(By.id("content_2"));
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 				impression);
+
+		StringBuilder st = new StringBuilder();
+		for (int i = 0; i < 2010; i++) {
+			st.append("a");
+		}
+
 		impression.clear();
+		impression.sendKeys(st);
 		reflection.clear();
+		reflection.sendKeys(st);
 
 		final WebElement submit = webDriver.findElement(By.cssSelector(".btn.btn-primary"));
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 				submit);
 		submit.click();
 
-		final WebElement newImpression = webDriver.findElement(By.name("contentArray[0]"));
-		final WebElement newReflection = webDriver.findElement(By.name("contentArray[0]"));
+		final WebElement newImpression = webDriver.findElement(By.id("content_1"));
+		final WebElement newReflection = webDriver.findElement(By.id("content_2"));
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 				newImpression, newReflection);
 
@@ -294,7 +307,9 @@ public class Case09 {
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(file, new File("evidence\\case9_10.png"));
 
+		newImpression.clear();
 		newImpression.sendKeys("所感");
+		newReflection.clear();
 		newReflection.sendKeys("1週間頑張りました");
 	}
 
