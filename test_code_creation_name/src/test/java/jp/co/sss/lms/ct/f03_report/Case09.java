@@ -264,7 +264,7 @@ public class Case09 {
 		FileUtils.copyFile(file, new File("evidence\\case9_9.png"));
 
 		newAchievement.sendKeys("7");
-		newImpression.sendKeys("週報の所感");
+		newImpression.sendKeys("所感");
 	}
 
 	@Test
@@ -294,7 +294,7 @@ public class Case09 {
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(file, new File("evidence\\case9_10.png"));
 
-		newImpression.sendKeys("週報の所感");
+		newImpression.sendKeys("所感");
 		newReflection.sendKeys("1週間頑張りました");
 	}
 
