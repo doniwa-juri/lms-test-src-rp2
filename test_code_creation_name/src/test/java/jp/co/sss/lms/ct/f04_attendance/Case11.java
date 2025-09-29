@@ -56,7 +56,7 @@ public class Case11 {
 		assertEquals("ログイン | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case11_1.png"));
+		FileUtils.copyFile(file, new File("evidence\\case11\\test1.png"));
 	}
 
 	@Test
@@ -81,7 +81,7 @@ public class Case11 {
 		assertEquals("コース詳細 | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case11_2.png"));
+		FileUtils.copyFile(file, new File("evidence\\case11\\test2.png"));
 	}
 
 	@Test
@@ -97,7 +97,7 @@ public class Case11 {
 		assertEquals("勤怠情報変更｜LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case11_3.png"));
+		FileUtils.copyFile(file, new File("evidence\\case11\\test3.png"));
 	}
 
 	@Test
@@ -112,7 +112,7 @@ public class Case11 {
 		assertEquals(webDriver.getCurrentUrl(), "http://localhost:8080/lms/attendance/update");
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case11_4.png"));
+		FileUtils.copyFile(file, new File("evidence\\case11\\test4.png"));
 	}
 
 	@Test
@@ -133,7 +133,7 @@ public class Case11 {
 		assertTrue(updateComp.contains("勤怠情報の登録が完了しました。"));
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case11_5.png"));
+		FileUtils.copyFile(file, new File("evidence\\case11\\test5.png"));
 	}
 
 }

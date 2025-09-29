@@ -48,7 +48,7 @@ public class Case03 {
 		assertEquals("ログイン | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case3_1.png"));
+		FileUtils.copyFile(file, new File("evidence\\case3\\test1.png"));
 	}
 
 	@Test
@@ -73,7 +73,7 @@ public class Case03 {
 		assertEquals("コース詳細 | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case3_2.png"));
+		FileUtils.copyFile(file, new File("evidence\\case3\\test2.png"));
 	}
 
 }

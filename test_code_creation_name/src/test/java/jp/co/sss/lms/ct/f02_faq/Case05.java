@@ -56,7 +56,7 @@ public class Case05 {
 		assertEquals("ログイン | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case5_1.png"));
+		FileUtils.copyFile(file, new File("evidence\\case5\\test1.png"));
 	}
 
 	@Test
@@ -81,7 +81,7 @@ public class Case05 {
 		assertEquals("コース詳細 | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case5_2.png"));
+		FileUtils.copyFile(file, new File("evidence\\case5\\test2.png"));
 	}
 
 	@Test
@@ -101,7 +101,7 @@ public class Case05 {
 		assertEquals("ヘルプ | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case5_3.png"));
+		FileUtils.copyFile(file, new File("evidence\\case5\\test3.png"));
 	}
 
 	@Test
@@ -122,7 +122,7 @@ public class Case05 {
 		assertEquals("よくある質問 | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case5_4.png"));
+		FileUtils.copyFile(file, new File("evidence\\case5\\test4.png"));
 	}
 
 	@Test
@@ -138,7 +138,7 @@ public class Case05 {
 		searchButton.click();
 
 		File file1 = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file1, new File("evidence\\case5_5(1).png"));
+		FileUtils.copyFile(file1, new File("evidence\\case5\\test5(1).png"));
 
 		final List<WebElement> list = webDriver.findElements(By.className("sorting_1"));
 
@@ -151,7 +151,7 @@ public class Case05 {
 		}
 
 		File file2 = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file2, new File("evidence\\case5_5(2).png"));
+		FileUtils.copyFile(file2, new File("evidence\\case5\\test5(2).png"));
 
 	}
 
@@ -169,7 +169,7 @@ public class Case05 {
 		assertEquals("", keyword.getAttribute("value"));
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case5_6.png"));
+		FileUtils.copyFile(file, new File("evidence\\case5\\test6.png"));
 
 	}
 
