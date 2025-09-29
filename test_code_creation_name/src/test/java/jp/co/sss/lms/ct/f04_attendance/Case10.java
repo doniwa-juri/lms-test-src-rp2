@@ -54,7 +54,7 @@ public class Case10 {
 		assertEquals("ログイン | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case10\\test1.png"));
+		FileUtils.copyFile(file, new File("evidence\\case10\\test01.png"));
 	}
 
 	@Test
@@ -79,7 +79,7 @@ public class Case10 {
 		assertEquals("コース詳細 | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case10\\test2.png"));
+		FileUtils.copyFile(file, new File("evidence\\case10\\test02.png"));
 	}
 
 	@Test
@@ -95,7 +95,7 @@ public class Case10 {
 		assertEquals("勤怠情報変更｜LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case10\\test3.png"));
+		FileUtils.copyFile(file, new File("evidence\\case10\\test03.png"));
 	}
 
 	@Test

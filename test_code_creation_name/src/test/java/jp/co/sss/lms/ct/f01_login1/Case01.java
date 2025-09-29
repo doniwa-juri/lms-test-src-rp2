@@ -47,7 +47,7 @@ public class Case01 {
 		assertEquals("ログイン | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case1\\test1.png"));
+		FileUtils.copyFile(file, new File("evidence\\case01\\test01.png"));
 
 	}
 

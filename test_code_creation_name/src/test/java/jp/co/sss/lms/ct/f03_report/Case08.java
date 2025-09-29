@@ -56,7 +56,7 @@ public class Case08 {
 		assertEquals("ログイン | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case8\\test1.png"));
+		FileUtils.copyFile(file, new File("evidence\\case08\\test01.png"));
 	}
 
 	@Test
@@ -81,7 +81,7 @@ public class Case08 {
 		assertEquals("コース詳細 | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case8\\test2.png"));
+		FileUtils.copyFile(file, new File("evidence\\case08\\test02.png"));
 	}
 
 	@Test
@@ -111,7 +111,7 @@ public class Case08 {
 		assertEquals("セクション詳細 | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case8\\test3.png"));
+		FileUtils.copyFile(file, new File("evidence\\case08\\test03.png"));
 	}
 
 	@Test
@@ -128,7 +128,7 @@ public class Case08 {
 		assertEquals("レポート登録 | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case8\\test4.png"));
+		FileUtils.copyFile(file, new File("evidence\\case08\\test04.png"));
 	}
 
 	@Test
@@ -147,7 +147,7 @@ public class Case08 {
 		textArea2.sendKeys("1週間頑張りました");
 
 		File file1 = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file1, new File("evidence\\case8\\test5(1).png"));
+		FileUtils.copyFile(file1, new File("evidence\\case08\\test05(1).png"));
 
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView({block: 'center'});",
 				submit);
@@ -158,7 +158,7 @@ public class Case08 {
 		assertEquals("セクション詳細 | LMS", title);
 
 		File file2 = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file2, new File("evidence\\case8\\test5(2).png"));
+		FileUtils.copyFile(file2, new File("evidence\\case08\\test05(2).png"));
 	}
 
 	@Test
@@ -174,7 +174,7 @@ public class Case08 {
 		assertEquals("ユーザー詳細", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case8\\test6.png"));
+		FileUtils.copyFile(file, new File("evidence\\case08\\test06.png"));
 	}
 
 	@Test
@@ -207,7 +207,7 @@ public class Case08 {
 		assertEquals("1週間頑張りました", text2.getText());
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case8\\test7.png"));
+		FileUtils.copyFile(file, new File("evidence\\case08\\test07.png"));
 	}
 
 }

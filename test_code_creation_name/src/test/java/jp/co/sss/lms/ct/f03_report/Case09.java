@@ -57,7 +57,7 @@ public class Case09 {
 		assertEquals("ログイン | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case9\\test1.png"));
+		FileUtils.copyFile(file, new File("evidence\\case09\\test01.png"));
 	}
 
 	@Test
@@ -82,7 +82,7 @@ public class Case09 {
 		assertEquals("コース詳細 | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case9\\test2.png"));
+		FileUtils.copyFile(file, new File("evidence\\case09\\test02.png"));
 	}
 
 	@Test
@@ -98,7 +98,7 @@ public class Case09 {
 		assertEquals("ユーザー詳細", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case9\\test3.png"));
+		FileUtils.copyFile(file, new File("evidence\\case09\\test03.png"));
 	}
 
 	@Test
@@ -127,7 +127,7 @@ public class Case09 {
 		assertEquals("レポート登録 | LMS", title);
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case9\\test4.png"));
+		FileUtils.copyFile(file, new File("evidence\\case09\\test04.png"));
 
 	}
 
@@ -154,7 +154,7 @@ public class Case09 {
 		assertEquals("form-control errorInput", newUnderstand.getAttribute("class"));
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case9\\test5.png"));
+		FileUtils.copyFile(file, new File("evidence\\case09\\test05.png"));
 
 		final Select select = new Select(newUnderstand);
 		select.selectByIndex(1);
@@ -182,7 +182,7 @@ public class Case09 {
 		assertEquals("form-control errorInput", newSection.getAttribute("class"));
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case9\\test6.png"));
+		FileUtils.copyFile(file, new File("evidence\\case09\\test06.png"));
 
 		newSection.clear();
 		newSection.sendKeys("ITリテラシー");
@@ -209,7 +209,7 @@ public class Case09 {
 		assertEquals("form-control errorInput", newAchievement.getAttribute("class"));
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case9\\test7.png"));
+		FileUtils.copyFile(file, new File("evidence\\case09\\test07.png"));
 
 		newAchievement.sendKeys("7");
 
@@ -236,7 +236,7 @@ public class Case09 {
 		assertEquals("form-control errorInput", newAchievement.getAttribute("class"));
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case9\\test8.png"));
+		FileUtils.copyFile(file, new File("evidence\\case09\\test08.png"));
 
 		newAchievement.sendKeys("7");
 	}
@@ -266,7 +266,7 @@ public class Case09 {
 		assertEquals("form-control errorInput", newImpression.getAttribute("class"));
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case9\\test9.png"));
+		FileUtils.copyFile(file, new File("evidence\\case09\\test09.png"));
 
 		newAchievement.sendKeys("7");
 		newImpression.sendKeys("所感");
@@ -305,7 +305,7 @@ public class Case09 {
 		assertEquals("form-control errorInput", newImpression.getAttribute("class"));
 
 		File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file, new File("evidence\\case9\\test10.png"));
+		FileUtils.copyFile(file, new File("evidence\\case09\\test10.png"));
 
 		newImpression.clear();
 		newImpression.sendKeys("所感");
